@@ -16,8 +16,8 @@ url: http://tsaiyee.com
 rss_url: /pages/atom.xml
 
 # gavatar头像及Favicon
-gavatar: /public/img/taichi.png
-favicon: /public/img/taichi.png
+gavatar: /public/img/taichi.jpg
+favicon: /public/img/taichi.jpg
 
 # google analytics 设置
 ga:
