@@ -5329,9 +5329,9 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
     display: block;
     padding: 10px 15px;
     margin-bottom: -1px;
-    color: #fff;
-    background-color: #1abc9c;
-    border: 0px solid #1abc9c;/*115449;*/
+    color: #268bd2;
+    background-color: #073642;
+    border: 0px solid #073642;/*115449;*/
     border-left: 0px;
     border-right: 0px;
     /*border: 0px solid #ddd;*/
@@ -5340,8 +5340,8 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
 
 a.list-group-item-lay:hover, a.list-group-item-lay:focus {
     text-decoration: none;
-    color: #fff;
-    background-color: #16a085;
+    color: #268bd2;
+    background-color: #073642;
 }
 
 .list-group-item-lay:first-child {
@@ -5364,7 +5364,7 @@ a.list-group-item-lay:hover, a.list-group-item-lay:focus {
 }
 
 a.list-group-item-lay {
-    color: #fff;
+    color: #268bd2;
 }
 
 .list-group-item:first-child {
@@ -5549,7 +5549,7 @@ a.list-group-item-danger.active:focus {
 
 .panel {
     margin-bottom: 20px;
-    background-color: #fff;
+    background-color: #eee8d5;
     border: 1px solid transparent;
     border-radius: 4px;
     -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
