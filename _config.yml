@@ -1,44 +1,27 @@
-permalink: /:year/:month/:day/:title.html
-paginate: 10
-markdown: redcarpet
+# Blog settings
+permalink: /blog/:title
 
-# 作者信息
-author: 
-  name: Yee Tsai
-  email: yee.tsai@gmail.com
-  link: http://tsaiyee.com
-  github: http://github.com/tsaiyee
 
-# 站点信息
-title: Yee's World | 一人一世界
-description: 
-url: http://tsaiyee.com
-rss_url: /pages/atom.xml
+# My variables
+name: TsaiYee
+description: Yee's Word
+google_verification: null
 
-# gavatar头像及Favicon
-gavatar: /public/img/taichi.jpg
-favicon: /public/img/taichi.jpg
 
-# google analytics 设置
-ga:
-  id: 
-  url: tsaiyee.com
+# File management
+include: [".htaccess"]
+exclude: ["README.md", "LICENSE"]
 
-# disqus 设置
-disqus:
-  shortname: tsaiyee
 
-# 主题设置，自动激活某个标签
-active: 读书
+# Sass
+sass:
+  style: :compressed
+  sass_dir: _sass
 
-# 首页除了最新文章外显示分类
-cates: 
-  - 读书
-  - 技术
 
-# 中文本地化
-locals:
-  tags: 标签
-  about: 关于
-  newest: 最新文章
-  archive: 归档
+# Markdown
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+highlighter: rouge
