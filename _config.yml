@@ -1,27 +1,59 @@
-# Blog settings
-permalink: /blog/:title
 
+# SEO settings
+title: "Yee's Word"
+title2: "TsaiYee" # default: ""
+description: "Yee's Word For Coding Life."
+keywords: "TsaiYee, Yee, Coding, Program, Life, Finance, 大数据, 机器学习"
+url: http://tsaiyee.com # site url
+baseurl: null # apply repo name if use it under gh-pages branch
+# baseurl: null # apply null if repo name is something like username.github.io
 
-# My variables
-name: TsaiYee
-description: Yee's Word
-google_verification: null
+google_analytics: UA-XXXXX-XX
+repo: http://github.com/tsaiyee
+disqus_shortname: "tsaiyee"
+twitter_username: "yeesword"
+comments: true
 
+# Build settings
+permalink   : /:year/:title/
+markdown    : kramdown
+highlighter : rouge
 
-# File management
-include: [".htaccess"]
-exclude: ["README.md", "LICENSE"]
+source: ./
+destination: ./_site
 
-
-# Sass
+# Sass configuration
 sass:
-  style: :compressed
-  sass_dir: _sass
+  sass_dir: assets/scss
+  style: compressed # expanded
 
+# Author settings
+author:
+  name     : "TsaiYee"
+  job      : "Software Engineer"
+  bio      : " 给时光以生命，而不是给生命以时光。"
+  thumb    : /images/favicon.png
+  email    : yee.tsai@gmail.com
+  url      : http://tsaiyee.com
+  github   : http://github.com/tsaiyee
+  twitter  : http://twitter.com/yeesword
+  facebook : https://www.facebook.com/yee.tsai.96
+  linkedin : http://linkedin.com
 
-# Markdown
-markdown: kramdown
-kramdown:
-  input: GFM
-  hard_wrap: false
-highlighter: rouge
+# social settings
+og_locale: "zh_CN"
+twitter_card: "summary_large_image"
+twitter_site: "@yeesword"
+
+gems:
+  - bourbon
+  - jekyll-paginate
+
+# navbar pages
+navbar:
+  - slug : about
+    title: About
+  - slug : blog
+    title: Blog
+
+exclude: ["gulp", "node_modules", "bower", "bower_components", "config.rb", "src", "Gemfile", "Gemfile.lock", ".rvmrc", ".rbenv-version", "package.json", "gulpfile.js", "README.md", "Rakefile", "changelog.md"]

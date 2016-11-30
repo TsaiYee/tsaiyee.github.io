@@ -1,13 +1,15 @@
 ---
 layout: post
 title: 使用Jekyll、GitHub搭建Blog
+description: "如果你玩腻了WordPress，亦或你是个喜欢折腾的Coder，那么你应该使用Jekyll和GitHub搭建一个属于自己的Blog，......"
+keywords: "Jekyll, GitHub Pages, Markdown"
 ---
 
 如果你玩腻了WordPress，亦或你是个喜欢折腾的Coder，那么你应该使用Jekyll和GitHub搭建一个属于自己的Blog，你可以像提交代码一样将写的Blog提交到GitHub，然后通过自己的域名或者GitHub的二级域名进行访问。
 
 ## Jekyll
 
-[Jekyll](!https://jekyllrb.com/)是一个静态网页生成工具。
+[Jekyll](https://jekyllrb.com/)是一个静态网页生成工具。
 
 ```
 Transform your plain text into static websites and blogs.
@@ -15,7 +17,7 @@ Transform your plain text into static websites and blogs.
 
 ## GitHub Pages
 
-[GitHub Pages](!github.io) 是一个页面托管主机。
+[GitHub Pages](https://github.io) 是一个页面托管主机。
 
 ```
 Websites for you and your projects.
@@ -41,4 +43,4 @@ Markdown is a text-to-HTML conversion tool for web writers.
 
 这是因为GitHub Pages使用的Jekyll和官方的Jekyll的Markdown语法上有很大的差别，强烈建议使用GitHub Pages的本地环境测试而不是使用Jekyll官方引擎。
 
-[搭建本地GitHub Pages传送门](!https://help.github.com/articles/using-jekyll-with-pages)
+[搭建本地GitHub Pages传送门](https://help.github.com/articles/using-jekyll-with-pages)
