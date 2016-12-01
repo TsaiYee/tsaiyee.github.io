@@ -263,6 +263,8 @@ hr {
   margin-top: $base-spacing * 2;
 }
 
+scss #ds-thread.ds-thread { #ds-reset { .ds-comments-info { .ds-comments-tabs { li.ds-tab { .ds-comments-tab-weibo { display: none; } } } } .ds-powered-by { display: none; } } }
+
 // This applies from 0px to 600px
 @media (max-width: 600px) {
   .date-label {
