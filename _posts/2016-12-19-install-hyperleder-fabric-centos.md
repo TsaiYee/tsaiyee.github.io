@@ -26,13 +26,13 @@ title: 在CentOS上搭建HyperLedger Fabric开发测试环境
 
 #### 使用yum安装Docker
 
-1. 更新yum
+##### 1. 更新yum
 
 ```
 sudo yum update
 ```
 
-2. 增加 yum Repo
+##### 2. 增加 yum Repo
 
 ~~~ shell
 sudo tee /etc/yum.repos.d/docker.repo <<-'EOF'
@@ -45,24 +45,25 @@ gpgkey=https://yum.dockerproject.org/gpg
 EOF
 ~~~
 
-3. 安装Docker
+##### 3. 安装Docker
 
 ~~~ shell
 sudo yum install docker-engine
 ~~~
 
-4. 允许Docker作为Service启动
+##### 4. 允许Docker作为Service启动
 
 ~~~ shell
 sudo systemctl enable docker.service
 ~~~
-5. 启动Docker服务
+
+##### 5. 启动Docker服务
 
 ~~~ shell
 sudo systemctl start docker
 ~~~
 
-6. 安装docker-compose
+##### 6. 安装docker-compose
 
 docker-compose是docker集群管理工具，可自定义一键启动多个docker container。
 
@@ -77,7 +78,7 @@ chmod +x /usr/local/bin/docker-compose
 
 #### 下载相关组件
 
-1. docker-compose.yml
+##### 1. docker-compose.yml
 
 可使用HyperLedger github上的样例
 
@@ -85,7 +86,7 @@ chmod +x /usr/local/bin/docker-compose
 curl -o docker-compose.yml https://raw.githubusercontent.com/hyperledger/fabric/master/examples/sdk/node/docker-compose.yml
 ~~~
 
-2. 下载Docker image
+##### 2. 下载Docker image
 
 membersrvc和peer可以采用标准的 hyperledger fabric组件，因此直接pull
 
@@ -96,19 +97,19 @@ docker pull hyperledger/fabric-peer:latest
 
 #### build客户端镜像
 
-1. 下载Fabric样例Dockerfile
+##### 1. 下载Fabric样例Dockerfile
 
 ~~~shell
 curl -o Dockerfile https://raw.githubusercontent.com/hyperledger/fabric/master/examples/sdk/node/Dockerfile
 ~~~
 
-2. build image
+##### 2. build image
 
 ~~~shell
 docker build -t hyperledger/fabric-starter-kit:latest .
 ~~~
 
-3. 检查images是否正确
+##### 3. 检查images是否正确
 
 ~~~shell
 docker ps -a
@@ -116,13 +117,13 @@ docker ps -a
 
 #### 运行Fabric开发环境
 
-1. 启动Clustedr
+##### 1. 启动Clustedr
 
 ~~~shell
 docker-compose -f docker-compose.yml up -d
 ~~~
 
-2. 进入Docker
+##### 2. 进入Docker
 
 部署为开发模式，直接进入peer
 
@@ -130,7 +131,7 @@ docker-compose -f docker-compose.yml up -d
 docker exec -it peer bash
 ~~~
 
-3. 登陆
+##### 3. 登陆
 
 官方Image默认打开权限，需要先登陆用户，使用内置用户登陆。
 
@@ -168,7 +169,7 @@ ports:
    - "0.0.0.0:7050:7050"
 ```
 
-4. 部署Chaincode
+##### 4. 部署Chaincode
 
 - CLI
 
@@ -216,7 +217,7 @@ POST http://127.0.0.1:7050/chaincode
 }
 ~~~
 
-5. 查询
+##### 5. 查询
 
 - CLI
 
@@ -249,7 +250,7 @@ POST http://127.0.0.1:7050/chaincode
 }
 ~~~
 
-6. 转账
+##### 6. 转账
 
 - CLI
 
@@ -282,13 +283,15 @@ POST http://127.0.0.1:7050/chaincode
 }
 ~~~
 
-7. 获取某个区块的信息
+##### 7. 获取某个区块的信息
 
 - REST API
 
 ```
 GET http://127.0.0.1:7050/chain/blocks/4
 ```
+
+***
 
 **到此**，CentOS上的开发环境搭建完毕。如果你使用的是Mac OSX，大可不必如此麻烦，使用[Docker for Mac](https://download.docker.com/mac/stable/Docker.dmg)，你直接可以在Mac上完成以上操作。
 
