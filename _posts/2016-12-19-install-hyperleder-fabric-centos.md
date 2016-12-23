@@ -34,8 +34,8 @@ sudo yum update
 
 2. 增加 yum Repo
 
-~~~shell
-$ sudo tee /etc/yum.repos.d/docker.repo <<-'EOF'
+~~~ shell
+sudo tee /etc/yum.repos.d/docker.repo <<-'EOF'
 [dockerrepo]
 name=Docker Repository
 baseurl=https://yum.dockerproject.org/repo/main/centos/7/
@@ -47,19 +47,18 @@ EOF
 
 3. 安装Docker
 
-~~~shell
+~~~ shell
 sudo yum install docker-engine
 ~~~
 
 4. 允许Docker作为Service启动
 
-~~~shell
+~~~ shell
 sudo systemctl enable docker.service
 ~~~
-
 5. 启动Docker服务
 
-~~~shell
+~~~ shell
 sudo systemctl start docker
 ~~~
 
@@ -72,7 +71,7 @@ curl -L https://github.com/docker/compose/releases/download/1.9.0/docker-compose
 chmod +x /usr/local/bin/docker-compose
 ~~~
 
-*Note*: HyperLedger github上docker-compose.yaml文件需要使用最新的docker-compose版本解析。
+*Note*: HyperLedger github上```docker-compose.yaml```文件需要使用最新的docker-compose版本解析。
 
 ### 搭建Fabric开发环境
 
@@ -152,7 +151,7 @@ peer network login jim
 也可以使用REST API：
 
 ```
-http://127.0.0.1:7050/registrar
+POST http://127.0.0.1:7050/registrar
 ```
 
 ~~~json
@@ -163,12 +162,13 @@ http://127.0.0.1:7050/registrar
 ~~~
 
 *Note*: 为了使用REST，你需要在docker-compose.yml文件的peer中加入端口映射：
+
 ```
 ports:
    - "0.0.0.0:7050:7050"
 ```
 
-3. 部署Chaincode
+4. 部署Chaincode
 
 - CLI
 
@@ -180,19 +180,21 @@ peer chaincode deploy -n hyperledger-demo-1 -c '{"Function": "init", "Args": ["a
 *Note*: 由于peer启动时设置为开发模式，chaincode运行时是在starter上执行的，没有针对chaincode专门构建和在单独的docker vm中执行。
 *Note*: 部署返回成功仅仅意味着提交的指令已被接收，不代表指令执行完成。
 *Note*: 由于运行在开发模式(dev)，在docker启动时已经注册chaincode，因此命令行或REST参数中不能再带-p 路径，不然部署报错：
+
 ```
 sending init failed(handler not found for chaincode
 ```
 
 如果不在docker-compose.yml中指定命令，可进入starter用以下命令注册：
-```
+
+~~~shell
 CORE_CHAINCODE_ID_NAME=hyperledger-demo-1 CORE_PEER_ADDRESS=0.0.0.0:7051 ./chaincode_example02
-```
+~~~
 
 - REST API
 
 ```
-http://127.0.0.1:7050/chaincode
+POST http://127.0.0.1:7050/chaincode
 ```
 
 ~~~json
@@ -214,7 +216,7 @@ http://127.0.0.1:7050/chaincode
 }
 ~~~
 
-4. 查询
+5. 查询
 
 - CLI
 
@@ -225,7 +227,7 @@ peer chaincode query -u jim -p github.com/hyperledger/fabric/examples/chaincode/
 - REST API
 
 ```
-http://127.0.0.1:7050/chaincode
+POST http://127.0.0.1:7050/chaincode
 ```
 
 ~~~json
@@ -247,7 +249,7 @@ http://127.0.0.1:7050/chaincode
 }
 ~~~
 
-5. 转账
+6. 转账
 
 - CLI
 
@@ -258,7 +260,7 @@ peer chaincode invoke -n hyperledger-demo-1 -c '{"Function": "query", "Args": ["
 - REST API
 
 ```
-http://127.0.0.1:7050/chaincode
+POST http://127.0.0.1:7050/chaincode
 ```
 
 ~~~json
@@ -280,6 +282,14 @@ http://127.0.0.1:7050/chaincode
 }
 ~~~
 
-**到此**，CentOS上的开发环境搭建完毕。如果你使用的是Mac OSX，大可不必如此麻烦，使用[Docker for Mac] (https://download.docker.com/mac/stable/Docker.dmg)，你直接可以在Mac上完成以上操作。
+7. 获取某个区块的信息
+
+- REST API
+
+```
+GET http://127.0.0.1:7050/chain/blocks/4
+```
+
+**到此**，CentOS上的开发环境搭建完毕。如果你使用的是Mac OSX，大可不必如此麻烦，使用[Docker for Mac](https://download.docker.com/mac/stable/Docker.dmg)，你直接可以在Mac上完成以上操作。
 
 **最后**，祝一切顺利。
