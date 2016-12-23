@@ -1,11 +1,11 @@
 ---
 layout: post
-title: HyperLedger Fabric 学习笔记 - 术语
+title: HyperLedger Fabric 初探 （一） - 术语
 ---
 
-本文记录 HyperLedger Fabric 的术语。不定期更新。
 
-# 术语
+
+***
 
 * Transaction
 
