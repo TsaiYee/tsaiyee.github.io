@@ -1,10 +1,10 @@
 
 # SEO settings
-title: "Coding Life"
-title2: "TsaiYee" # default: ""
-description: "Yee's Word for Coding Life"
-keywords: "TsaiYee, Yee, Coding, Program, Life, Finance, Big Data, Machine Learn"
-url: http://tsaiyee.com # site url
+title: "I'm"
+title2: "0x01" # default: ""
+description: "All in One about Programming "
+keywords: "0x01, TsaiYee, Yee, caiyi, 蔡一, Coding, Program, Life, Finance, Big Data, Machine Learn"
+url: http://0x01.im # site url
 baseurl: null # apply repo name if use it under gh-pages branch
 # baseurl: null # apply null if repo name is something like username.github.io
 
@@ -28,13 +28,13 @@ sass:
 
 # Author settings
 author:
-  name     : "TsaiYee"
+  name     : "Yee Tsai"
   job      : "Software Engineer"
   bio      : ""
   thumb    : /images/favicon.png
   email    : yee.tsai@gmail.com
-  url      : http://tsaiyee.com
-  github   : http://github.com/tsaiyee
+  url      : http://0x01.im
+  github   : http://github.com/yeetsai
   twitter  : http://twitter.com/yeesword
   facebook : https://www.facebook.com/yee.tsai.96
   linkedin : http://www.linkedin.com/in/yee-tsai-b29239b
