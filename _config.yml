@@ -8,7 +8,7 @@ url: http://0x01.im # site url
 baseurl: null # apply repo name if use it under gh-pages branch
 # baseurl: null # apply null if repo name is something like username.github.io
 
-google_analytics: UA-88264578-1
+google_analytics: UA-106179247-1
 repo: http://github.com/yeetsai
 twitter_username: "yeesword"
 comments: false
